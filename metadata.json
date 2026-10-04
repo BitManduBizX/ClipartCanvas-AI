@@ -1,0 +1,6 @@
+{
+  "name": "ClipartCanvas AI",
+  "description": "Your infinite studio canvas for clean, unrestricted AI vector and clipart generation with instant background removal, multi-format SVG/PNG export, and the Artisan Agent.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
