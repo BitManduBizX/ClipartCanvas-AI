@@ -1,6 +1,7 @@
 import express from "express";
 import { createServer as createViteServer } from "vite";
 import path from "path";
+import fs from "fs";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import { GoogleGenAI, Type } from "@google/genai";
@@ -11,9 +12,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 function getGenAIClient() {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey =
+    process.env.GEMINI_API_KEY ||
+    process.env.VITE_GEMINI_API_KEY ||
+    process.env.GOOGLE_API_KEY;
   if (!apiKey) {
-    throw new Error("GEMINI_API_KEY is not configured on the server.");
+    throw new Error(
+      "GEMINI_API_KEY is not configured in environment variables."
+    );
   }
   return new GoogleGenAI({
     apiKey,
@@ -279,14 +285,20 @@ Your role:
     }
   });
 
-  if (process.env.NODE_ENV !== "production") {
+  const distPath = path.join(__dirname, "dist");
+  const isProd =
+    process.env.NODE_ENV === "production" ||
+    (fs.existsSync(path.join(distPath, "index.html")) &&
+      process.env.NODE_ENV !== "development" &&
+      !process.env.VITE_DEV_SERVER);
+
+  if (!isProd) {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(__dirname, "dist");
     app.use(express.static(distPath));
     app.get("*", (_req, res) => {
       res.sendFile(path.join(distPath, "index.html"));

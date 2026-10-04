@@ -1,3 +1,8 @@
+import botanicalFernImg from "../assets/images/clipart_botanical_fern_1791091572693.jpg";
+import kawaiiAstronautImg from "../assets/images/clipart_kawaii_astronaut_1791091584961.jpg";
+import vintageCameraImg from "../assets/images/clipart_vintage_camera_1791091595743.jpg";
+import watercolorFoxImg from "../assets/images/clipart_watercolor_fox_1791091607257.jpg";
+
 export interface ClipartVariation {
   id: string;
   title: string;
@@ -240,7 +245,7 @@ export const INITIAL_SHOWCASE_VARIATIONS: ClipartVariation[] = [
     palette: "Indigo & Emerald Studio",
     aspectRatio: "1:1",
     sourceType: "raster",
-    imageUrl: "/src/assets/images/clipart_botanical_fern_1791091572693.jpg",
+    imageUrl: botanicalFernImg,
     dominantColors: ["#10B981", "#047857", "#D97706", "#4F46E5"],
     originalPrompt: "Botanical monstera and fern leaf in an artisanal terracotta pot",
     optimizedPrompt: "Clean flat vector clipart illustration of a tropical monstera and botanical fern leaf in an artisanal terracotta pot, isolated on a pure crisp white background, sharp vector edges",
@@ -255,7 +260,7 @@ export const INITIAL_SHOWCASE_VARIATIONS: ClipartVariation[] = [
     palette: "Soft Pastel Pop",
     aspectRatio: "1:1",
     sourceType: "raster",
-    imageUrl: "/src/assets/images/clipart_kawaii_astronaut_1791091584961.jpg",
+    imageUrl: kawaiiAstronautImg,
     dominantColors: ["#6366F1", "#F472B6", "#FBBF24", "#1E293B"],
     originalPrompt: "Happy little astronaut cat floating with a golden star",
     optimizedPrompt: "Cute kawaii cartoon clipart illustration of a joyful little astronaut cat floating with a small golden star, thick clean vector outlines, pastel indigo and coral color palette, isolated on a pure solid white background",
@@ -270,7 +275,7 @@ export const INITIAL_SHOWCASE_VARIATIONS: ClipartVariation[] = [
     palette: "Archival Ink & Cobalt",
     aspectRatio: "1:1",
     sourceType: "raster",
-    imageUrl: "/src/assets/images/clipart_vintage_camera_1791091595743.jpg",
+    imageUrl: vintageCameraImg,
     dominantColors: ["#0F172A", "#3B82F6", "#EF4444", "#E2E8F0"],
     originalPrompt: "Retro rangefinder camera with clean geometric shapes",
     optimizedPrompt: "Minimalist line-art and colored vector clipart of a retro rangefinder camera with clean geometric shapes, subtle halftone accent, isolated on a pure solid white background",
@@ -285,7 +290,7 @@ export const INITIAL_SHOWCASE_VARIATIONS: ClipartVariation[] = [
     palette: "Warm Ceramic & Sage",
     aspectRatio: "1:1",
     sourceType: "raster",
-    imageUrl: "/src/assets/images/clipart_watercolor_fox_1791091607257.jpg",
+    imageUrl: watercolorFoxImg,
     dominantColors: ["#EA580C", "#F97316", "#FEF3C7", "#1E293B"],
     originalPrompt: "Clever autumn red fox sitting peacefully",
     optimizedPrompt: "Artisanal watercolor clipart of a clever autumn red fox sitting peacefully, soft expressive brush strokes with clean defined silhouette edges, isolated on a pure solid white background",
